@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
   end
   
   def create
