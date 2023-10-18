@@ -11,6 +11,17 @@ module PhotshareApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    #　追加
+    # タイムゾーン
+    config.time_zone = "Tokyo"
+    config.active_record.default_timezone = :local
+
+    # 自動生成禁止
+    config.generators do |g|
+      g.assets false
+      g.helper false
+    end
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
