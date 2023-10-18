@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_required, only: [:new, :create]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -15,7 +16,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to user_path, notice: "ユーザー情報を編集しました！"
+    else
+      render :edit
+    end
   end
 
   private
@@ -25,4 +33,9 @@ class UsersController < ApplicationController
                                  :password_confirmation,
                                  :icon, :icon_cache)
   end
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 end
