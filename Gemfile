@@ -19,6 +19,9 @@ gem "mini_magick"
 gem "net-smtp"
 gem "net-imap"
 gem "net-pop"
+
+# Seed用のジェム
+gem "faker"
 #  - - - - - - - - - - - - - - - - - - - - - - -
 
 gem "rails", "~> 6.1.6"
