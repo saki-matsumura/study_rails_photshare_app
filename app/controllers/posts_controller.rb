@@ -36,6 +36,11 @@ class PostsController < ApplicationController
   end
   
   def edit
+    if @post.user == current_user
+      render "edit"
+    else
+      redirect_to posts_path, notice: "勝手に書き換えようとしないでくださ〜い！"
+    end
   end
   
   def update
@@ -47,8 +52,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_path, notice: "ブログを削除しました！"
+    if @post.user == current_user
+      @post.destroy
+      redirect_to posts_path, notice: "ブログを削除しました！"
+    else
+      redirect_to posts_path, notice: "勝手に削除しようとしないでくださ〜い！"
+    end
   end
 
   private 

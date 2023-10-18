@@ -18,6 +18,14 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+    if @user == current_user
+      render "edit"
+    else
+      redirect_to user_path(current_user), notice: "勝手に書き換えようとしないでくださ〜い！"
+    end
+  end
+
   def update
     if @user.update(user_params)
       redirect_to user_path, notice: "ユーザー情報を編集しました！"
