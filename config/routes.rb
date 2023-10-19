@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # root "posts#index"
+  root "posts#index"
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show, :edit, :update]
