@@ -1,3 +1,56 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// ————————————————————————————————————————
+// ▼テーマカラー変数
+
+$color-red: #E71D3E;        // 赤（ハート、通知など）
+$color-blue: #0090D1;       // ブルー
+$color-darkblue: #013D6E;   // ダークブルー（本文のリンク、リプライなど）
+$color-black: #040404;      // 黒
+$color-gray: #CBCBCB;       // グレー
+$color-lightgray: #DBDBDB;  // ライトグレー
+$color-lightwhite: #DBDBDB; // 白
+
+// ————————————————————————————————————————
+
+.td_post{
+ padding: 10px;
+}
+
+.td_icon{
+  width: 40px;
+}
+
+.td_name{
+  width: 60px;
+}
+
+.td_content{
+  width: 240px;
+}
+
+.td_image{
+  width: 120px;
+}
+
+.td_image img{
+  width: 120px;
+}
+
+.new_post{
+  margin: 20px 10% ;
+}
+
+.contents_field {
+  border: 2px solid;
+  border-color: #cccccc;
+  border-radius: 10px;
+  margin: 0% 10% 20px;
+  padding: 25px;
+}
+
+.td_btn{
+    width: 60px;
+}

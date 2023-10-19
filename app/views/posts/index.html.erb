@@ -1,21 +1,30 @@
-<h2>post_ホーム画面</h2>
+
 <div>
   <%= link_to '新規投稿', new_post_path %>
+  <div class = "new_post">
   <% @posts.each do |post| %>
   <table>
+  <tr>
+  </tr>
     <tr>
-      <td><%= image_tag(post.user.icon.url) %></td>
-      <td><%= post.user.name %></td>
-      <td><%= post.content %></td>
+      <td class="td_post td_icon"><div class="icon_post" ><%= image_tag(post.user.icon.url) %></div></td>
+      <td class="td_post td_name"><%= post.user.name %></td>
+      <td class="td_post td_content"><%= post.content %></td>
       <% if post.image.url %>
-        <td><%= image_tag post.image.url %></td>
+        <td class="td_post td_image"><%= image_tag post.image.url %></td>
+        <% else %>
+        <td class="td_post td_noimage"></td>
       <% end %>
-      <td><%= link_to '詳細', post_path(post.id) %></td>
+        <td class="td_post td_btn"><%= link_to '詳細', post_path(post.id) %></td>
       <% if post.user_id == current_user.id %>
-        <td><%= link_to '編集', edit_post_path(post.id) %></td>
-        <td><%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
+        <td class="td_post td_btn"><%= link_to '編集', edit_post_path(post.id) %></td>
+        <td class="td_post td_btn"><%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
+         <% else %>
+        <td class="td_post td_btn"></td>
+        <td class="td_post td_btn"></td>
       <% end %>
     </tr>
   </table>
   <% end %>
+  </div>
 <div>

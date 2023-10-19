@@ -1,0 +1,54 @@
+
+// ————————————————————————————————————————
+// ▼テーマカラー変数
+
+$color-red: #E71D3E;        // 赤（ハート、通知など）
+$color-blue: #0090D1;       // ブルー
+$color-darkblue: #013D6E;   // ダークブルー（本文のリンク、リプライなど）
+$color-black: #040404;      // 黒
+$color-gray: #CBCBCB;       // グレー
+$color-lightgray: #DBDBDB;  // ライトグレー
+$color-lightwhite: #DBDBDB; // 白
+
+// ————————————————————————————————————————
+
+// ————————————————————————————————————————
+// ▼レイアウト
+// メインコンテンツ領域
+.main_content{
+    width: 70%;
+    min-width: 480px;
+
+    padding: 30px;
+}
+div.main_content{
+    height: 100%;
+    min-height: 100%;
+    margin-top: 30px;
+    border: 1px solid $color-lightgray;
+    border-radius: 10px;
+}
+
+header {
+  height: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.form td{
+  padding: 15px 15px;
+}
+
+.btn-margin-left{
+  margin: 10px 10px 10px 0px;
+}
+
+.btn-margin-right{
+  margin: 10px 0px 10px 10px;
+  text-align: right;
+}
+
+.app_name{
+  font-weight: bold;
+  font-size: larger;
+}
