@@ -10,6 +10,7 @@ class PostsController < ApplicationController
       @post = current_user.posts.build(post_params)
     else
       @post = current_user.posts.build
+      @postconfirm = Postconfirm.new
     end
   end
 
@@ -23,7 +24,12 @@ class PostsController < ApplicationController
       render :new
     else
       if @post.save
-        redirect_to posts_path, notice: "ブログを作成しました！"   
+        redirect_to posts_path, notice: "投稿しました！"
+        # メーラーのidをセットする
+        # 写真を投稿したときにメールを送る
+        # @postconfirm = Postconfirm.new(postconfirm_param)
+        # binding.pry
+        PostconfirmMailer.postconfirm_mail(@post.user).deliver 
       else
         render :new
       end

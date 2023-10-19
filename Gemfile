@@ -22,6 +22,10 @@ gem "net-pop"
 
 # Seed用のジェム
 gem "faker"
+
+# 追加：メイラー使用する
+gem "rexml"
+
 #  - - - - - - - - - - - - - - - - - - - - - - -
 
 gem "rails", "~> 6.1.6"
@@ -45,6 +49,8 @@ group :development do
   # gem "rack-mini-profiler", "~> 2.0"
   gem "listen", "~> 3.3"
   gem "spring"
+  # 追加：メイラー
+  gem "letter_opener_web"
 end
 
 group :test do
