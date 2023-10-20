@@ -11,5 +11,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: { minimum: 6 }, on: :create
   has_secure_password
+  validates :icon, presence: true
   before_validation { email.downcase! }
 end
