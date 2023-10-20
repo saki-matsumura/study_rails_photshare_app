@@ -3,30 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.1"
 
-#  - - - - - - - - - - - - - - - - - - - - - - -
-# 追加
-# パスワード生成用のジェム
 gem "bcrypt"
-
-# ENV用のジェム
 gem "dotenv-rails"
-
-# 画像アップ用のジェム
 gem "carrierwave"
 gem "mini_magick"
-
-# Heloku用のジェム
 gem "net-smtp"
 gem "net-imap"
 gem "net-pop"
-
-# Seed用のジェム
 gem "faker"
-
-# 追加：メイラー使用する
 gem "rexml"
-
-#  - - - - - - - - - - - - - - - - - - - - - - -
 
 gem "rails", "~> 6.1.6"
 gem "pg", "~> 1.1"
@@ -40,16 +25,13 @@ gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
-  # 追加：pry
   gem "pry-rails"
 end
 
 group :development do
   gem "web-console", ">= 4.1.0"
-  # gem "rack-mini-profiler", "~> 2.0"
   gem "listen", "~> 3.3"
   gem "spring"
-  # 追加：メイラー
   gem "letter_opener_web"
 end
 
